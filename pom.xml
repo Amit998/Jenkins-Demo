@@ -37,16 +37,58 @@
 	    <version>2.5.1</version>
 	</dependency>
 	
+	
 	<dependency>
-	    <groupId>nz.net.ultraq.thymeleaf</groupId>
-	    <artifactId>thymeleaf-layout-dialect</artifactId>
-	    <version>2.5.1</version>
-	</dependency>
-    
+        <groupId>org.apache.maven.doxia</groupId>
+        <artifactId>doxia-site-renderer</artifactId>
+        <version>1.8.1</version>
+    </dependency>
+	
+	
+	
     
     
     
   </dependencies>
+  
+  
+  <reporting>
+  <plugins>
+  
+  <plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	  <artifactId>maven-site-plugin</artifactId>
+	  <version>3.7.1</version>
+	</plugin>
+	<plugin>
+	  <groupId>org.apache.maven.plugins</groupId>
+	  <artifactId>maven-project-info-reports-plugin</artifactId>
+	  <version>2.2</version>
+	</plugin>
+	
+	
+	<plugin>
+	  <groupId>maven-surefire-plugin</groupId>
+	  <artifactId>maven-surefire-plugin</artifactId>
+	  <version>2.22.1</version>
+	</plugin>
+	
+	
+	<plugin>
+	    <groupId>org.sonarsource.scanner.maven</groupId>
+	    <artifactId>sonar-maven-plugin</artifactId>
+	    <version>3.0.1</version>
+	</plugin>
+	
+	  
+  </plugins>
+  </reporting>
+  
+    <properties>
+    	<sonar.projectKey>sonarQubeTest</sonar.projectKey>
+	</properties>
+
+
   <build>
     <finalName>springmvc</finalName>
   </build>

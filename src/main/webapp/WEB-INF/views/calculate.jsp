@@ -84,7 +84,7 @@ Double result1=(Double) request.getAttribute("calculatedValue");
 	 
 	   
 	  <button type="submit" class="btn btn-success" name="btn" value="+">+</button>
-	  <button type="submit" class="btn btn-light" name="btn"  value="-">-</button>
+	  <button type="submit" class="btn btn-success" name="btn"  value="-">-</button>
 	  <button type="submit" class="btn btn-success" name="btn"  value="/">/</button>
 	  <button type="submit" class="btn btn-success" name="btn"  value="*">*</button>
 	
