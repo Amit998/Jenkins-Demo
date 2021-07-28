@@ -29,7 +29,7 @@
 
                         <li class="nav-item"><a class="nav-link" href="home">Home</a></li>
                         <li class="nav-item">
-                            <a class="nav-link" href="calculate">Calculator</a>
+                            <a class="nav-link" href="calculate" id="calBtn">Calculator</a>
                         </li>
 
                        

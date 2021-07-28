@@ -72,21 +72,21 @@ Double result1=(Double) request.getAttribute("calculatedValue");
 	
 	<div class="mb-3">
 	    <label for="exampleInputName" class="form-label">First Number</label>
-	    <input min=0 type="number" class="form-control" id="exampleInputName" name="fNumber">
+	    <input min=0 type="number" class="form-control" id="num1" name="fNumber">
 	    
 	  </div>
 	  <div class="mb-3">
 	    <label for="exampleInputEmail1" class="form-label">Second Number</label>
-	    <input min=0 type="number" class="form-control" id="exampleInputEmail1" name="sNumber">
+	    <input min=0 type="number" class="form-control" id=num2 name="sNumber">
 	    
 	  </div>
 	  
 	 
 	   
-	  <button type="submit" class="btn btn-success" name="btn" value="+">+</button>
-	  <button type="submit" class="btn btn-success" name="btn"  value="-">-</button>
-	  <button type="submit" class="btn btn-success" name="btn"  value="/">/</button>
-	  <button type="submit" class="btn btn-success" name="btn"  value="*">*</button>
+	  <button type="submit" class="btn btn-success" name="btn" value="+" id="add">+</button>
+	  <button type="submit" class="btn btn-success" name="btn"  value="-" id="sub">-</button>
+	  <button type="submit" class="btn btn-success" name="btn"  value="/" id="div">/</button>
+	  <button type="submit" class="btn btn-success" name="btn"  value="*" id="mul">*</button>
 	
 	
 	</form>
