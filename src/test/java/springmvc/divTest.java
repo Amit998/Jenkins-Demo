@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 public class divTest {
 
-	@Test
+	//@Test
 	public void divTesting() {
 
 		System.setProperty("webdriver.chrome.driver", "D:\\software\\chromeDriver\\chromedriver.exe");

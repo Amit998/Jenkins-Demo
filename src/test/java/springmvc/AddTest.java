@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 
 public class AddTest {
 
-	@Test
+	//@Test
 	public void addTesting() {
 
 		System.setProperty("webdriver.chrome.driver", "D:\\software\\chromeDriver\\chromedriver.exe");

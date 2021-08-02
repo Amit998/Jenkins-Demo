@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import springmvc.model.Calculator;
+import springmvc.model.MyServices;
 
 @Controller
 
@@ -51,7 +52,7 @@ public class HomeController {
 			model.addAttribute("isEmpty","true");
 			model.addAttribute("errMsg","Empty Field");
 		}else {
-			double result=getCalCulation(Integer.parseInt(cal.getfNumber()),Integer.parseInt(cal.getsNumber()),value);
+			double result=getCalCulation(Double.parseDouble(cal.getfNumber()),Double.parseDouble(cal.getsNumber()),value);
 			model.addAttribute("isEmpty","false");
 			System.out.println(result+"");
 			model.addAttribute("calculatedValue",result);
@@ -61,25 +62,25 @@ public class HomeController {
 		return "calculate";
 	}
 	
-	public double getCalCulation(int num1,int num2,String op) {
-		
+	public double getCalCulation(Double num1,Double num2,String op) {
+		MyServices myServices=new MyServices();
 		
 		
 		if (op.equals("+")) {
 			//System.out.println("+");
-			return num1+num2;
+			return myServices.add(num1, num2);
 			
 		}else if (op.equals("-")) {
 			//System.out.println("-");
-			return num1-num2;
+			return myServices.sub(num1, num2);
 			
 		}else if (op.equals("/")) {
 			//System.out.println("/");
-			return num1/num2;
+			return myServices.div(num1, num2);
 				
 		}else if (op.equals("*")) {
 			//System.out.println("*");
-			return num1*num2;
+			return myServices.mul(num1, num2);
 		}
 		
 		return 0;

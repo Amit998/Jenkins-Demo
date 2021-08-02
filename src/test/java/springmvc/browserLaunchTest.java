@@ -10,7 +10,7 @@ public class browserLaunchTest {
 	
 
 	
-	@Test
+	//@Test
 	public void broweserMethod() {
 		
 		System.setProperty("webdriver.chrome.driver", "D:\\software\\chromeDriver\\chromedriver.exe");
