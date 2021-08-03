@@ -48,7 +48,7 @@ public class HomeController {
 		
 //		System.out.println(cal.getfNumber()+cal.getsNumber()+value);
 		
-		if (cal.getfNumber()=="" || cal.getsNumber()=="") {
+		if (cal.getfNumber().equals("") || cal.getsNumber().equals("")) {
 			model.addAttribute("isEmpty","true");
 			model.addAttribute("errMsg","Empty Field");
 		}else {

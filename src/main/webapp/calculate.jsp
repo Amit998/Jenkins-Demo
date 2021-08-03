@@ -16,7 +16,8 @@ Double result1=(Double) request.getAttribute("calculatedValue");
 
 
 %>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>Contact</title>
     <meta charset="utf-8">

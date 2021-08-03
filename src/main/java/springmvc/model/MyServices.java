@@ -7,6 +7,9 @@ public static int add(double number1,double number2){
 		double result=number1+number2;
 		int value=(int)result;
 		
+		System.out.println(Math.floor((int)value));
+		System.out.println("checl");
+		
 		return value;
 		
 	}
@@ -20,6 +23,9 @@ public static int add(double number1,double number2){
 		double result=number1/number2;
 		int value=(int)result;
 		
+		System.out.println(value);
+		System.out.println("checl");
+		
 		return value;
 		
 			
@@ -29,6 +35,9 @@ public static int add(double number1,double number2){
 		double result=number1-number2;
 		int value=(int)result;
 		
+		System.out.println(value);
+		System.out.println("check");
+		
 		return value;
 		
 	}
@@ -36,6 +45,9 @@ public static int add(double number1,double number2){
 		
 		double result=number1*number2;
 		int value=(int)result;
+		
+		System.out.println(value);
+		System.out.println("checl");
 		
 		return value;
 	}

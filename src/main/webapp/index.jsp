@@ -1,7 +1,9 @@
 <%@page import="org.springframework.ui.Model"%>
 <%@page isELIgnored="false" %>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>Home Page</title>
     <meta charset="utf-8">
@@ -44,7 +46,7 @@
 
     <div class="container body-content">
     
-    <h3 class="text-center">Home Page</h3>
+    <h1 class="text-center">Home Page</h1>
     
     
   
@@ -59,7 +61,7 @@
         </p>
     </main>
 </div>
- 
+ </div>
 
 
 

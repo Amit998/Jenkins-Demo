@@ -13,19 +13,36 @@ public class calTest {
 	public void calAddTest() {
 		assertEquals(5, myServices.add(2, 3));
 		assertEquals(203, myServices.add(100, 103));
+		
+
+	}
+	@Test
+	public void calSubTest() {
+		assertEquals(5, myServices.sub(8, 3));
+		assertEquals(200, myServices.sub(303, 103));
 
 	}
 	
-	public void calTestPass() {
-		assertEquals(5, myServices.add(2, 3));
-		
-		/*
-		 * assertEquals("error in div()",2, myServices.sub(6, 3));
-		 * assertEquals("error in mul()",14, myServices.mul(2, 7));
-		 * assertEquals("error in sub()",4, myServices.sub(2, 6));
-		 */
+	@Test
+	public void calDivTest() {
+
 	
+		assertEquals(5, (int) myServices.div(15, 3));
+		assertEquals(10, (int) myServices.div(10000, 1000));
+
 	}
+	
+	@Test
+	public void calMulTest() {
+		assertEquals(6,(int) myServices.mul(2, 3));
+		assertEquals(400,(int) myServices.mul(200, 2));
+
+	}
+	
+		
+		
+	
+	
 	
 
 }

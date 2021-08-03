@@ -8,41 +8,84 @@ pipeline{
 	    stage('version check') {
             steps {
                 bat 'java -version'
-		bat 'mvn -version'
+	        	bat 'mvn -version'
         	}
         }
 	stage('git clone') {
-            steps {
-                git 'https://git.nagarro.com/freshertraining2021/amitdutta.git'
-        	}
-        }
+        steps {
+            git 'https://git.nagarro.com/freshertraining2021/amitdutta.git'
+    	}
+    }
 	stage('clean and install') {
-            steps {
-                bat 'mvn clean install -f springmvc/pom.xml'
-        	}
-        }
+        steps {
+            bat 'mvn clean install -f springmvc/pom.xml'
+    	}
+    }
 	
 	stage('package') {
-            steps {
-                bat 'mvn package -f springmvc/pom.xml'
-        	}
+        steps {
+            bat 'mvn package -f springmvc/pom.xml'
+    	}
+    }
+    
+    stage('Test Case') {
+        steps {
+            bat 'mvn test -f springmvc'
         }
-	stage('Test Case') {
-            steps {
-                bat 'mvn test -f springmvc'
+    }
+    
+    stage('bug report') {
+        steps {
+            withSonarQubeEnv('SonarQubeSERVER'){
+    		bat "mvn sonar:sonar -f springmvc/pom.xml"
+    	    }
+        }
+    }
+    
+	stage('build and tag docker ') {
+        steps {
+           dir("springmvc") {
+                bat 'docker build -f dockerfile -t webmvctest:latest .'
+                // bat '''docker tag webmvctest springmvc/webmvctest:latest'
             }
+           
         }
+    }
+    
+    stage('push image docker hub ') {
+        steps {
+           dir("springmvc") {
+                bat 'docker build -f dockerfile -t webmvctest:latest .'
+                // bat '''docker tag webmvctest springmvc/webmvctest:latest'
+            }
+           
+        }
+    }
 
-	stage('bug report') {
+	stage('deploy docker') {
             steps {
-                withSonarQubeEnv('SonarQubeSERVER'){
-        		bat "mvn sonar:sonar -f springmvc/pom.xml"
-        	    }
+                dir("springmvc") {
+                    // bat 'docker run -p 8043:8080 webmvctest'
+                    echo 'On Hold'
+                    
+                }
+         
             }
         }
-	
-	
-	stage ('Server'){
+    
+    	stage('deploy to docker hub') {
+            steps {
+                dir("springmvc") {
+                    // bat 'docker push springmvc/webmvctest:latest'
+                    echo 'On Hold'
+                   
+                    
+                }
+         
+            }
+        }
+        
+        stage ('Server'){
             steps {
                rtServer (
                  id: "Artifactory",
@@ -75,29 +118,7 @@ pipeline{
                     serverId: "artifactory-server"
                 )
             }
-        }
+        }	
 		
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
